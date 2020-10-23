@@ -1,0 +1,32 @@
+<div class='panel-body'>
+    <div class='table-responsive'>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>priority</th>
+                    <th>status</th>
+                    <th>Due</th>
+                    <th>assignee</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let task of tasks;">
+                    <td>{{task.id}}</td>
+                    <td>{{task.taskName}}</td>
+                    <td>{{task.priority}}</td>
+                    <td>{{task.status}}</td>
+                    <td>{{task.due}}</td>
+                    <td>{{task.assignId}}</td>
+
+                </tr>
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+</div>
