@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-3">
+            <form [formGroup]="createTaskForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="taskName">taskName</label>
+                    <input type="text" id="taskName" class="form-control" formControlName="taskName">
+                    <span *ngIf="!createTaskForm.get('taskName').valid && createTaskForm.get('taskName').touched"
+                        class="help-block">please enter a taskName</span>
+                </div>
+                <div class="form-group">
+                    <label for="assignId">assignId</label>
+                    <input type="number" id="assignId" class="form-control" min=1 formControlName="assignId">
+                </div>
+                <div class="form-group">
+                    <label for="status">status</label>
+                    <select id="status" formControlName="status">
+                        <option *ngFor="let status of statuses" [value]="status">
+                            {{status}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">priority</label>
+                    <select formControlName="priority">
+                        <option *ngFor="let priority of priorities" [value]="priority">
+                            {{priority}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskStatus">taskStatus</label>
+                    <select formControlName="taskStatus">
+                        <option *ngFor="let taskStatus of taskStatuses" [value]="taskStatus">
+                            {{taskStatus}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="due">due</label>
+                    <input type="date" id="due" class="form-control" formControlName="due">
+                </div>
+
+                <span *ngIf="!createTaskForm.valid && createTaskForm.touched" class="help-block">please enter
+                    valid data</span>
+
+                <button class="btn btn-primary" type="submit" [disabled]="!createTaskForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

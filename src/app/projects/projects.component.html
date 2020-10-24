@@ -34,13 +34,13 @@
 
             <tbody *ngIf="user">
                 <tr *ngFor="let project of projects;">
-                    <td>{{project.projectId}}</td>
+                    <td>{{project.id}}</td>
                     <td>{{project.projectName}}</td>
                     <td>{{project.createdBy}}</td>
                     <td>{{project.createdAt}}</td>
-                    <td><button class="btn btn-primary" (click)="viewtasks(project.projectId)">view</button>
+                    <td><button class="btn btn-primary" (click)="viewtasks(project.id)">view</button>
                     </td>
-                    <td><button class="btn btn-danger" (click)="delete(project.projectId)"
+                    <td><button class="btn btn-danger" (click)="delete(project.id)"
                             *ngIf="project.createdBy === user.firstName">Delete</button></td>
                 </tr>
             </tbody>
@@ -68,11 +68,11 @@
 
                 <tbody *ngIf="user">
                     <tr *ngFor="let project of assignedprojects;">
-                        <td>{{project.projectId}}</td>
+                        <td>{{project.id}}</td>
                         <td>{{project.projectName}}</td>
                         <td>{{project.createdBy}}</td>
                         <td>{{project.createdAt}}</td>
-                        <td><button class="btn btn-primary" (click)="viewtasks(project.projectId)">view</button>
+                        <td><button class="btn btn-primary" (click)="viewtasks(project.id)">view</button>
                         </td>
 
                     </tr>

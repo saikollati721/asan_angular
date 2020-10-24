@@ -5,11 +5,11 @@ import { User } from '../Model/user';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-createuser',
-  templateUrl: './createuser.component.html',
-  styleUrls: ['./createuser.component.css']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
-export class CreateuserComponent implements OnInit {
+export class UsersComponent implements OnInit {
 
   createUserForm: FormGroup;
 
@@ -39,18 +39,18 @@ export class CreateuserComponent implements OnInit {
       'lastName': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'password': new FormControl(null, Validators.required),
-      'createdAt':new FormControl()
+      // 'createdAt':new FormControl()
     })
 
     
      setTimeout(() =>{
       this.user=this.userservice.getLoginUser();
       console.log("at create form: "+this.user.firstName);
-    },1000)
+    },3000)
   }
   
   onSubmit(){
-    this.createUserForm.value.createdAt=(new Date());
+    // this.createUserForm.value.createdAt=(new Date());
     console.log(this.createUserForm.value);
     this.userservice.saveUser(this.createUserForm.value).subscribe(data=> console.log("User registered successfully"), error=> console.log(error));
     this.gotoHome();

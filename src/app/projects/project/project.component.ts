@@ -5,11 +5,12 @@ import { ProjectService } from 'src/app/services/project.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-createproject',
-  templateUrl: './createproject.component.html',
-  styleUrls: ['./createproject.component.css']
+  selector: 'app-project',
+  templateUrl: './project.component.html',
+  styleUrls: ['./project.component.css']
 })
-export class CreateprojectComponent implements OnInit {
+export class ProjectComponent implements OnInit {
+
   project: Project =new Project();
   projectName="";
 
@@ -34,7 +35,8 @@ export class CreateprojectComponent implements OnInit {
     })
   }
   gotoProjects(){
-    this.router.navigate(['/projects']);
+    this.router.navigate([2,'projects']);
   }
 
 }
+

@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
   id: number;
   ngOnInit() {
     this.user = this.userservice.getUsers();
-    this.user.subscribe(data=> console.log(data), error=> console.log(error))
+    this.user.subscribe(data=> console.log(data), error=> console.log(error));
 
     console.log("from dynamic template "+ this.route.snapshot.params['id'])
     

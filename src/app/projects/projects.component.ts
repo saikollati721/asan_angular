@@ -14,8 +14,8 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit{
-  projectId: number;
-  projects: Project[];
+ 
+  projects: Project[] = [];
   assignedprojects: Project;
   constructor(private projectService: ProjectService, private router: Router,private route: ActivatedRoute,
     private assginedprojectservice: AssignedprojectService,private userservice: UserService ) { }
@@ -37,7 +37,10 @@ export class ProjectsComponent implements OnInit{
   getProjectsList(){
     this.projectService.getProjectByUserId(this.id)
     .subscribe(data => {
-      this.projects=data
+      for(var i=0;i<data.length;i++){
+        this.projects.push(data[i]);
+      }
+      
     }, error=> console.log(error));
     
   }
@@ -45,6 +48,7 @@ export class ProjectsComponent implements OnInit{
     this.assginedprojectservice.getassignedprojects(this.id)
     .subscribe(data => {
       this.assignedprojects=data;
+
     },error=> console.log(error));
   }
 
@@ -52,6 +56,7 @@ export class ProjectsComponent implements OnInit{
    console.log("deleting project"+projectId);
   this.projectService.deleteProject(projectId).subscribe(data =>{
     console.log(data);
+    this.projects=[];
     this.getProjectsList();
   }, error=> console.log(error))
  }
