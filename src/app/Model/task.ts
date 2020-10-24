@@ -5,4 +5,5 @@ export class Task{
 	 status: string;
 	 due: Date;
 	 priority: string;
+	 assignId: number;
 }

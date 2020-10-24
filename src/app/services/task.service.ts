@@ -16,4 +16,8 @@ export class TaskService {
   saveTask(task: Object): Observable<any>{
     return this.http.post(`${this.baseUrl}`, task);
   }
+
+  updateTask(task: Object,taskId: number): Observable<any>{
+    return this.http.post(`${this.baseUrl}/${taskId}`, task);
+  }
 }

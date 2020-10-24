@@ -9,17 +9,21 @@
                     <th>status</th>
                     <th>Due</th>
                     <th>assignee</th>
+                    <th>Action</th>
                 </tr>
             </thead>
 
             <tbody>
                 <tr *ngFor="let task of tasks;">
+
                     <td>{{task.id}}</td>
                     <td>{{task.taskName}}</td>
                     <td>{{task.priority}}</td>
                     <td>{{task.status}}</td>
                     <td>{{task.due}}</td>
                     <td>{{task.assignId}}</td>
+                    <td><button class="btn btn-primary" (click)="edittask(task.id)">view</button>
+                    </td>
 
                 </tr>
             </tbody>

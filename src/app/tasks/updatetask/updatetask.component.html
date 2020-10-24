@@ -4,7 +4,8 @@
             <form [formGroup]="createTaskForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="taskName">taskName</label>
-                    <input type="text" id="taskName" class="form-control" formControlName="taskName">
+                    <input type="text" id="taskName" class="form-control" formControlName="taskName"
+                        [value]="createTaskForm.get('taskName')">
                     <span *ngIf="!createTaskForm.get('taskName').valid && createTaskForm.get('taskName').touched"
                         class="help-block">please enter a taskName</span>
                 </div>
@@ -41,13 +42,14 @@
 
                 <div class="form-group">
                     <label for="due">due</label>
-                    <input type="date" id="due" class="form-control" formControlName="due">
+                    <input type="date" id="due" class="form-control" formControlName="due"
+                        [value]="createTaskForm.get('due')">
                 </div>
 
                 <span *ngIf="!createTaskForm.valid && createTaskForm.touched" class="help-block">please enter
                     valid data</span>
 
-                <button class="btn btn-primary" type="submit" [disabled]="!createTaskForm.valid">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>
     </div>

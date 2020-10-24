@@ -9,11 +9,11 @@ import { ProjectsComponent } from './projects/projects.component';
 
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskdetailComponent } from './tasks/taskdetail/taskdetail.component';
-import { CreatetaskComponent } from './tasks/createtask/createtask.component';
 
 import { ProjectComponent } from './projects/project/project.component';
 import { UsersComponent } from './users/users.component';
 import { TaskComponent } from './tasks/task/task.component';
+import { UpdatetaskComponent } from './tasks/updatetask/updatetask.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +21,11 @@ import { TaskComponent } from './tasks/task/task.component';
     ProjectsComponent,
     TasksComponent,
     TaskdetailComponent,
-    CreatetaskComponent,
 
     ProjectComponent,
     UsersComponent,
-    TaskComponent
+    TaskComponent,
+    UpdatetaskComponent
   ],
   imports: [
     BrowserModule,
